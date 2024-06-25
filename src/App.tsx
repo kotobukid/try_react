@@ -1,11 +1,14 @@
-import {useState} from 'react'
+import {useContext, useState} from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import {MyContext} from "./MyContext.ts";
 
 function App() {
     const [count, setCount] = useState(0);
     const [count2, setCount2] = useState(100);
+
+    const contextValue = useContext(MyContext);
 
     return (
         <>
@@ -19,6 +22,8 @@ function App() {
             </div>
             <h1>Vite + React</h1>
             <div className="card">
+                <span>context value: { contextValue }</span>
+                <br/>
                 <button onClick={() => setCount((count) => count + 1)}>
                     count is {count}
                 </button>
