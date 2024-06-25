@@ -1,3 +1,9 @@
-import {createContext} from "react";
+import React, {createContext} from "react";
 
-export const MyContext = createContext(200);
+type MyContextType = {
+    one_value: number,
+    set_one_value: React.Dispatch<React.SetStateAction<number>>
+}
+
+
+export const MyContext = createContext<MyContextType | undefined>(undefined);

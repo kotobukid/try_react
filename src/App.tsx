@@ -8,7 +8,7 @@ function App() {
     const [count, setCount] = useState(0);
     const [count2, setCount2] = useState(100);
 
-    const contextValue = useContext(MyContext);
+    const {one_value, set_one_value} = useContext(MyContext);
 
     return (
         <>
@@ -22,7 +22,7 @@ function App() {
             </div>
             <h1>Vite + React</h1>
             <div className="card">
-                <span>context value: { contextValue }</span>
+                <button onClick={() => set_one_value(one_value + 1)}>context value: { one_value }</button>
                 <br/>
                 <button onClick={() => setCount((count) => count + 1)}>
                     count is {count}
