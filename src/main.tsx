@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {ReactNode, useState} from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import {MyContext} from "./MyContext.ts";
@@ -6,7 +6,7 @@ import './index.css'
 
 
 
-const MyProvider = ({children}) => {
+const MyProvider = ({children}: {children: ReactNode}) => {
     const [one_value, set_one_value] = useState(2000);
 
     return (

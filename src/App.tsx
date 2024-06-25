@@ -8,6 +8,7 @@ function App() {
     const [count, setCount] = useState(0);
     const [count2, setCount2] = useState(100);
 
+    // @ts-ignore
     const {one_value, set_one_value} = useContext(MyContext);
 
     return (
